@@ -111,8 +111,12 @@ class _BMICalculatorState extends State<BMICalculator> {
       nameController.text=result[lastIndex]["username"];
       heightController.text=result[lastIndex]["height"];
       weightController.text=result[lastIndex]["weight"];
-      gender=result[lastIndex]["gender"];
-      bmiValue=result[lastIndex]["bmi_status"];
+
+      setState(() {
+        gender=result[lastIndex]["gender"];
+        bmiValue=result[lastIndex]["bmi_status"];
+      });
+
     }
 
 @override
@@ -120,6 +124,10 @@ class _BMICalculatorState extends State<BMICalculator> {
     // TODO: implement initState
     super.initState();
     loadAll();
+
+
+
+
   }
 
 
